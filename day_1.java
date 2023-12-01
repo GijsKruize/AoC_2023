@@ -5,6 +5,7 @@ import java.util.Map;
 public class day_1 {
     static int sum = 0;
 
+    // create map from number to integer variable of number
     public static String replaceNumbers(String line) {
         Map<String, String> numberMap = new HashMap<>();
         numberMap.put("one", "o1e");
@@ -49,10 +50,10 @@ public class day_1 {
             while ((line = br.readLine()) != null) {
                 String number = "0";
                 // Process each line here
-                line = replaceNumbers(replaceNumbers(line));
-                System.out.println(line);
+                line = replaceNumbers(replaceNumbers(line)); // coment out to get solution of week one
+                // System.out.println(line);
                 line = line.replaceAll("[^\\d.]", "");
-                System.out.println(line);
+                // System.out.println(line);
                 int n = line.length();
                 if (n >= 2) {
                     char first = line.charAt(0);
@@ -63,7 +64,8 @@ public class day_1 {
                     char first = line.charAt(0);
                     number = new StringBuilder().append(first).append(first).toString();
                 }
-                System.out.println(number);
+                // System.out.println(number);
+                // Parse String to integer
                 int line_int = Integer.parseInt(number);
                 sum = sum + line_int;
             }
@@ -76,7 +78,5 @@ public class day_1 {
     public static void main(String[] args) {
         System.out.println(printsum());
     }
-
-    // Other methods and class members can be added here
 
 }
